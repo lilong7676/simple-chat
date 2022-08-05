@@ -1,0 +1,26 @@
+{
+  "name": "toys",
+  "version": "1.0.0",
+  "description": "a toys",
+  "main": "index.js",
+  "workspaces": {
+    "packages": [
+      "packages/chat-client-sdk",
+      "packages/common",
+      "packages/navigation-controller",
+      "packages/server-express",
+      "packages/static"
+    ]
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "clean-install": "rm -rf node_modules && rm -rf ./packages/*/node_modules && pnpm -r i",
+    "dev-static": "pnpm --filter @toys/static run start",
+    "dev-server": "pnpm --filter @toys/server-express run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+  },
+  "author": "",
+  "license": "ISC"
+}

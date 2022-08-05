@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"],
+      "images": ["../public/assets/images"]
+    }
+  },
+  "include": ["src", "./index.d.ts"]
+}

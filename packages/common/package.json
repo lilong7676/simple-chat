@@ -1,0 +1,16 @@
+{
+  "name": "@toys/common",
+  "version": "1.0.0",
+  "description": "a toys common",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "moment": "^2.29.3",
+    "typeorm": "^0.3.5"
+  },
+  "author": "lilong7676@outlook.com",
+  "license": "ISC"
+}

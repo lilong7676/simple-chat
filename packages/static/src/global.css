@@ -1,0 +1,241 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+#root > div {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app-page,
+.app-page-motion {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.app-page .app-page-item,
+.app-page .page-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.app-page .app-page-item.hidden {
+  display: none;
+}
+
+.app-page .page-container .page-content-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: var(--page-background-color);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.app-page .page-container .page-content-container .page-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  background-color: var(--page-content-bg-color);
+}
+
+.app-tab-bar {
+  height: var(--app-tab-bar-height);
+  flex-shrink: 0;
+}
+
+.viewcontroller-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/**
+页面转场动画相关 start
+**/
+
+.app-page-motion-0-negative100 {
+  transition: all 200ms;
+  transform: translateX(0);
+}
+.app-page-motion-0-negative100-active {
+  transform: translateX(-100%);
+}
+
+.app-page-motion-0-100 {
+  transition: all 200ms;
+  transform: translateX(0);
+}
+.app-page-motion-0-100-active {
+  transform: translateX(100%);
+}
+
+.app-page-motion-negative100-0 {
+  transition: all 200ms;
+  transform: translateX(-100%);
+}
+.app-page-motion-negative100-0-active {
+  transform: translateX(0);
+}
+
+.app-page-motion-100-0 {
+  transition: all 200ms;
+  transform: translateX(100%);
+}
+.app-page-motion-100-0-active {
+  transform: translateX(0);
+}
+/**
+页面转场动画相关 end
+**/
+
+/**
+由于 antd-mobile 中的主题变量也是在 :root 下声明的，
+所以在有些情况下会由于优先级的问题无法成功覆盖。
+通过 :root:root 可以显式地让你所写内容的优先级更高一些，从而确保主题变量的成功覆盖。
+**/
+:root:root {
+  /** 导航栏高度 **/
+  --nav-bar-height: 60px;
+  /** 底栏 tabbar 高度 **/
+  --app-tab-bar-height: 50px;
+  /** 页面背景色 **/
+  --page-background-color: #ccc;
+  /** 页面内容背景色 **/
+  --page-content-bg-color: #fff;
+  /** 通用背景色 **/
+  --common-bg-color: #fff;
+  --active-background-color: #eee;
+  /** 分割线颜色 **/
+  --common-divider-color: #eee;
+
+  /** 文本相关 **/
+  /** 主文字颜色 **/
+  --common-text-color: #333;
+  /** 描述问题的颜色 **/
+  --common-text-desc-color: #999;
+
+  /** input 相关 **/
+  --input-background-color: #fff;
+  --input-border-radius: 4px;
+  --input-font-size: 14px;
+
+  --chat-input-container-height: 60px;
+}
+
+.toys-input {
+  --background-color: var(--input-background-color);
+  --font-size: var(--input-font-size);
+  border-radius: var(--input-border-radius);
+  height: 35px;
+  padding: 0 15px;
+}
