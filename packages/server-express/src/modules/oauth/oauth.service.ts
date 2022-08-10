@@ -4,9 +4,9 @@ import {
   PasswordModel,
   RefreshTokenModel,
 } from 'oauth2-server';
-import { AppDataSource } from 'src/app/data-source';
-import { OAuth } from '@toys/common/entity/OAuth';
-import { User } from '@toys/common/entity/User';
+import { AppDataSource } from '@app/data-source';
+import { OAuth } from '@toys/common/lib/entity/OAuth';
+import { User } from '@toys/common/lib/entity/User';
 
 const authRepository = AppDataSource.getRepository(OAuth);
 const userRepository = AppDataSource.getRepository(User);

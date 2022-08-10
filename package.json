@@ -16,10 +16,23 @@
     "preinstall": "npx only-allow pnpm",
     "clean-install": "rm -rf node_modules && rm -rf ./packages/*/node_modules && pnpm -r i",
     "dev-static": "pnpm --filter @toys/static run start",
-    "dev-server": "pnpm --filter @toys/server-express run start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev-server": "pnpm --filter @toys/server run start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "cz",
+    "commitlint": "commitlint",
+    "build:server": "pnpm --filter @toys/server run build"
   },
   "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "author": "",
   "license": "ISC"

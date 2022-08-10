@@ -1,12 +1,13 @@
 {
-  "name": "@toys/server-express",
+  "name": "@toys/server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon -r tsconfig-paths/register --files src/app/index.ts",
-    "build": "npx tsc",
+    "build-common": "cd ../common && npm run build",
+    "build": "npm run build-common && rm -rf dist/ && npx tsc --build --force",
     "mysql": "docker-compose up"
   },
   "keywords": [],
@@ -18,6 +19,7 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "helmet": "^5.0.2",
+    "module-alias": "^2.2.2",
     "morgan": "^1.10.0",
     "mysql2": "^2.3.3",
     "oauth2-server": "^3.1.1",
@@ -43,5 +45,11 @@
     "prettier": "^2.3.2",
     "tsconfig-paths": "^3.14.1",
     "typescript": "^4.6.3"
+  },
+  "_moduleAliases": {
+    "@app": "dist/app",
+    "@common": "dist/common",
+    "@modules": "dist/modules",
+    "@typings": "dist/typings"
   }
 }

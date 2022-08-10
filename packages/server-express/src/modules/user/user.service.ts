@@ -1,14 +1,14 @@
 import { Like, Not, In } from 'typeorm';
-import { AppDataSource } from 'src/app/data-source';
-import { User } from '@toys/common/entity/User';
+import { AppDataSource } from '@app/data-source';
+import { User } from '@toys/common/lib/entity/User';
 import {
   PubSubChannel,
   PubSubRequestFriendData,
   PubSubUpdateFriendRequestStatusData,
-} from '@toys/common/types/cache-pubsub-data';
-import { Friend, FriendReqStatus } from '@toys/common/entity/im/Friend';
-import { CreateUserDto } from '@toys/common/model/User';
-import { getCacheManager } from 'src/app/cache-manager';
+} from '@toys/common/lib/types/cache-pubsub-data';
+import { Friend, FriendReqStatus } from '@toys/common/lib/entity/im/Friend';
+import { CreateUserDto } from '@toys/common/lib/model/User';
+import { getCacheManager } from '@app/cache-manager';
 
 /** 过滤掉用户敏感信息 */
 const filterUser = (user: User | null) => {

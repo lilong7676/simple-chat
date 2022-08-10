@@ -3,19 +3,19 @@
  * @Author: lilonglong
  * @Date: 2022-04-28 22:17:42
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-07-18 15:05:04
+ * @Last Modified time: 2022-08-10 17:55:00
  */
 import {
   PubSubRequestFriendData,
   PubSubUpdateFriendRequestStatusData,
-} from '@toys/common/types/cache-pubsub-data';
-import { Message } from '@toys/common/entity/im/Message';
-import { MessageDto } from '@toys/common/model/message';
-import { PubSubChannel } from '@toys/common/types/cache-pubsub-data';
-import { ConversationTargetType } from '@toys/common/model/conversation';
-import { getCacheManager } from 'src/app/cache-manager';
-import * as messageService from 'src/modules/im/message/message.service';
-import * as conversationService from 'src/modules/im/conversation/conversation.service';
+} from '@toys/common/lib/types/cache-pubsub-data';
+import { Message } from '@toys/common/lib/entity/im/Message';
+import { MessageDto } from '@toys/common/lib/model/message';
+import { PubSubChannel } from '@toys/common/lib/types/cache-pubsub-data';
+import { ConversationTargetType } from '@toys/common/lib/model/conversation';
+import { getCacheManager } from '@app/cache-manager';
+import * as messageService from '@modules/im/message/message.service';
+import * as conversationService from '@modules/im/conversation/conversation.service';
 import { MIo, MSocket } from 'src/typings/socket';
 export class IoManager {
   static manager: IoManager;

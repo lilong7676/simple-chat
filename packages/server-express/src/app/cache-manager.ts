@@ -4,11 +4,11 @@
  * @Author: lilonglong
  * @Date: 2022-04-27 22:18:36
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-07-18 11:40:13
+ * @Last Modified time: 2022-08-10 17:55:00
  */
 import { createClient } from 'redis';
-import { PubSubChannel } from '@toys/common/types/cache-pubsub-data';
-import logger from 'src/common/utils/logger';
+import { PubSubChannel } from '@toys/common/lib/types/cache-pubsub-data';
+import logger from '@common/utils/logger';
 
 /**
  * 发布订阅监听函数

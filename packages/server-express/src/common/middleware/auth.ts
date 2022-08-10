@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction, response } from 'express';
 import OAuth2Server from 'oauth2-server';
-import authServer from 'src/modules/oauth/oauth-server';
+import authServer from '@modules/oauth/oauth-server';
 
 /**
  * auth 白名单，不需要校验 token

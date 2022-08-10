@@ -3,22 +3,22 @@
  * @Author: lilonglong
  * @Date: 2022-04-29 22:36:54
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-07-18 14:53:54
+ * @Last Modified time: 2022-08-10 17:55:00
  */
-import { AppDataSource } from 'src/app/data-source';
+import { AppDataSource } from '@app/data-source';
 import { v4 as uuidv4 } from 'uuid';
-import { Message } from '@toys/common/entity/im/Message';
-import { ConversationTargetType } from '@toys/common/model/conversation';
-import { ClientToServerResponse } from '@toys/common/types/io-socket';
+import { Message } from '@toys/common/lib/entity/im/Message';
+import { ConversationTargetType } from '@toys/common/lib/model/conversation';
+import { ClientToServerResponse } from '@toys/common/lib/types/io-socket';
 import {
   MessageType,
   PersistFlag,
   MessageNotifyContent,
   MessageNotifyContentType,
   MessageDto,
-} from '@toys/common/model/message';
+} from '@toys/common/lib/model/message';
 import { MIo } from 'src/typings/socket';
-import { getCacheManager } from 'src/app/cache-manager';
+import { getCacheManager } from '@app/cache-manager';
 import { getOfflineMessageCacheKey } from './utils';
 
 /** 消息表 */

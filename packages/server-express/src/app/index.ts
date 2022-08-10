@@ -3,8 +3,9 @@
  * @Author: lilonglong
  * @Date: 2022-04-27 22:59:52
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-06-07 14:05:34
+ * @Last Modified time: 2022-08-10 16:38:31
  */
+import 'module-alias/register';
 import express from 'express';
 import http from 'http';
 import bodyParser from 'body-parser';
@@ -12,13 +13,13 @@ import helmet from 'helmet';
 import cors from 'cors';
 import { initCacheManager } from './cache-manager';
 import 'dotenv/config';
-import { AppDataSource } from 'src/app/data-source';
-import { authRouter } from 'src/modules/oauth';
-import { userRouter } from 'src/modules/user';
-import logger from 'src/common/utils/logger';
-import morganMiddleware from 'src/common/middleware/morgan';
-import authMiddleware from 'src/common/middleware/auth';
-import responseJsonInterceptor from 'src/common/middleware/response-json-interceptor';
+import { AppDataSource } from '@app/data-source';
+import { authRouter } from '@modules/oauth';
+import { userRouter } from '@modules/user';
+import logger from '@common/utils/logger';
+import morganMiddleware from '@common/middleware/morgan';
+import authMiddleware from '@common/middleware/auth';
+import responseJsonInterceptor from '@common/middleware/response-json-interceptor';
 import { initSocket } from '../modules/socket';
 
 // create typeorm connection

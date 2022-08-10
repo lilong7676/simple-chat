@@ -1,5 +1,5 @@
 import express, { Request, Response, NextFunction, Router } from 'express';
-import { UpdateIncomingFriendRequestParams } from '@toys/common/types/api-params';
+import { UpdateIncomingFriendRequestParams } from '@toys/common/lib/types/api-params';
 import * as service from './user.service';
 
 const router: Router = express.Router();

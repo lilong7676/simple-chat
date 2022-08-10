@@ -3,7 +3,7 @@
  * @Author: lilonglong
  * @Date: 2022-04-27 22:59:52
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-07-18 14:31:30
+ * @Last Modified time: 2022-08-10 18:00:12
  */
 import { MessageDto } from '../model/message';
 import { ConversationDto } from '../model/conversation';
@@ -47,19 +47,19 @@ export interface ClientToServerEvents {
 export interface LocalClientToServerEventsForClient {
   messageFromClient: (
     message: MessageDto,
-    callback: (error?: Error, result: ServerToClientResponse) => void
+    callback: (error: Error | undefined, result: ServerToClientResponse) => void
   ) => void;
   fetchOfflineMessages: (
     undefined,
     callback: (
-      error?: Error,
+      error: Error | undefined,
       result: ServerToClientResponse<MessageDto[]>
     ) => void
   ) => void;
   fetchConversations: (
     undefined,
     callback: (
-      error?: Error,
+      error: Error | undefined,
       result: ServerToClientResponse<ConversationDto[]>
     ) => void
   ) => void;

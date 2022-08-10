@@ -3,7 +3,7 @@
  * @Author: lilonglong
  * @Date: 2022-04-27 22:59:52
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-07-14 11:55:03
+ * @Last Modified time: 2022-08-10 17:55:00
  */
 import { Server } from 'http';
 import { Server as SocketServer } from 'socket.io';
@@ -12,11 +12,11 @@ import {
   ClientToServerEvents,
   InterServerEvents,
   SocketData,
-} from '@toys/common/types/io-socket';
+} from '@toys/common/lib/types/io-socket';
 import {
   getAccessToken,
   isTokenNotExpires,
-} from 'src/modules/oauth/oauth.service';
+} from '@modules/oauth/oauth.service';
 import { IoManager } from './io-manager';
 
 export function initSocket(server: Server) {
