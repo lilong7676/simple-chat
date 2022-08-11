@@ -1,4 +1,4 @@
-import { UserDto } from '@toys/common/model/User';
+import { UserDto } from '@toys/common/lib/model/User';
 
 /**
  * state

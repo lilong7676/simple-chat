@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon -r tsconfig-paths/register --files src/app/index.ts",
-    "build-common": "cd ../common && npm run build",
-    "build": "npm run build-common && rm -rf dist/ && npx tsc --build --force",
+    "_build-common": "cd ../common && npm run build",
+    "build": "npm run _build-common && rm -rf dist/ && npx tsc --build --force",
+    "build:start": "npm run build && node dist/app",
     "mysql": "docker-compose up"
   },
   "keywords": [],

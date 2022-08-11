@@ -3,13 +3,13 @@
  * @Author: lilonglong
  * @Date: 2022-05-11 22:09:00
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-07-29 16:20:46
+ * @Last Modified time: 2022-08-11 09:44:11
  */
 import React, { useCallback, useRef, useContext, useMemo } from 'react';
 import { PullToRefresh, List, Image, SearchBar, Empty } from 'antd-mobile';
 import { SearchBarRef } from 'antd-mobile/es/components/search-bar';
 import { useMount } from 'ahooks';
-import { UserDto } from '@toys/common/model/user';
+import { UserDto } from '@toys/common/lib/model/user';
 // import { mockedUsers } from '@/constants';
 import { push, RouteNames } from '@/routes';
 import { StateContext } from '@/store';

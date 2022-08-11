@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { URLSearchParams } from 'url';
-import { UserDto, CreateUserDto } from '@toys/common/model/User';
-import { UpdateIncomingFriendRequestParams } from '@toys/common/types/api-params';
+import { UserDto, CreateUserDto } from '@toys/common/lib/model/User';
+import { UpdateIncomingFriendRequestParams } from '@toys/common/lib/types/api-params';
 import { FriendRelationItem } from '@/../../common/entity/im/Friend';
 import { ApiResult } from '@/typings';
 

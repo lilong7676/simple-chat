@@ -3,7 +3,7 @@
  * @Author: lilonglong
  * @Date: 2022-04-06 22:34:08
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-10 17:55:00
+ * @Last Modified time: 2022-08-11 10:19:08
  */
 import { DataSource } from 'typeorm';
 
@@ -19,7 +19,7 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_DATABASE,
   synchronize: true,
   logging: true,
-  entities: ['node_modules/@toys/common/lib/entity/**/*.ts'],
+  entities: ['node_modules/@toys/common/lib/entity/**/*.js'],
   subscribers: [],
   migrations: [],
   timezone: 'Z', // https://github.com/typeorm/typeorm/issues/976#issuecomment-386925989

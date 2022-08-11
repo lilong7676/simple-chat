@@ -7,7 +7,7 @@
     "baseUrl": "./",
     "outDir": "./lib",
     "rootDir": "src",
-    "target": "ES6",
+    "target": "ESNext",
     "module": "commonjs"
   },
   "display": "@toys/common"

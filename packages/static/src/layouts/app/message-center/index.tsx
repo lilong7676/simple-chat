@@ -3,7 +3,7 @@
  * @Author: lilonglong
  * @Date: 2022-06-06 22:38:58
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-01 16:36:23
+ * @Last Modified time: 2022-08-11 09:44:11
  */
 import React, {
   useEffect,
@@ -13,7 +13,7 @@ import React, {
   useCallback,
 } from 'react';
 import { getChatClient } from '@toys/chat-client-sdk';
-import { IConversation } from '@toys/common/model/conversation';
+import { IConversation } from '@toys/common/lib/model/conversation';
 import AppPage from '@/layouts/templates/app-page';
 import { ConversationItem } from '@/components/conversation';
 import { StateContext } from '@/store';

@@ -21,6 +21,7 @@ const config: Configuration = {
                 '@babel/plugin-transform-runtime',
                 {
                   regenerator: true,
+                  helpers: false,
                 },
               ],
             ],

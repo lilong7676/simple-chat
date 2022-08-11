@@ -3,12 +3,12 @@
  * @Author: lilonglong
  * @Date: 2022-06-06 22:43:33
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-07-29 14:14:53
+ * @Last Modified time: 2022-08-11 09:44:11
  */
 import React from 'react';
 import { Avatar, Badge } from 'antd-mobile';
-import { IConversation } from '@toys/common/model/conversation';
-import { UserDto } from '@toys/common/model/user';
+import { IConversation } from '@toys/common/lib/model/conversation';
+import { UserDto } from '@toys/common/lib/model/user';
 import './index.less';
 
 const classPrefix = 'conversation-item';

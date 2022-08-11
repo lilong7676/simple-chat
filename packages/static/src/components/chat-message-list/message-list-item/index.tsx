@@ -3,12 +3,12 @@
  * @Author: lilonglong
  * @Date: 2022-06-30 22:42:26
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-07-05 18:19:37
+ * @Last Modified time: 2022-08-11 09:44:11
  */
 import React from 'react';
 import cz from 'classnames';
-import { IMessage } from '@toys/common/model/message';
-import { UserDto } from '@toys/common/model/user';
+import { IMessage } from '@toys/common/lib/model/message';
+import { UserDto } from '@toys/common/lib/model/user';
 
 export interface MessageUser extends UserDto {
   isSelf: boolean;

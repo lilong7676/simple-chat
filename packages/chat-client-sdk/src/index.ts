@@ -5,18 +5,18 @@ import {
   LocalClientToServerEventsForClient,
   ServerToClientEvents,
   ServerToClientResponse,
-} from '@toys/common/types/io-socket';
+} from '@toys/common/lib/types/io-socket';
 import {
   IMessage,
   MessageDto,
   MessageStatus,
   MessageType,
   PersistFlag,
-} from '@toys/common/model/message';
+} from '@toys/common/lib/model/message';
 import {
   IConversation,
   ConversationTargetType,
-} from '@toys/common/model/conversation';
+} from '@toys/common/lib/model/conversation';
 import ImDB from './db';
 
 import { FetchHistoryMessagesOptions } from './typing';
