@@ -3,11 +3,11 @@
  * @Author: lilonglong
  * @Date: 2022-06-10 22:58:54
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-11 09:44:11
+ * @Last Modified time: 2022-08-11 18:21:01
  */
 import { initChatClient, ChatClient } from '@toys/chat-client-sdk';
-import { UpdateIncomingFriendRequestParams } from '@toys/common/lib/types/api-params';
-import { IConversation } from '@toys/common/lib/model/conversation';
+import { UpdateIncomingFriendRequestParams } from '@lilong767676/common/lib/types/api-params';
+import { IConversation } from '@lilong767676/common/lib/model/conversation';
 import { IState, getState, watchState, updateStateManually } from '@/store';
 import {
   fetchIncomingFriendRequests,

@@ -1,4 +1,4 @@
-import { UserDto } from '@toys/common/lib/model/User';
+import { UserDto } from '@lilong767676/common/lib/model/user';
 
 /**
  * 记录存储的 localStorage key

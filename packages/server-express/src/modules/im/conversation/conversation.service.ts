@@ -3,15 +3,15 @@
  * @Author: lilonglong
  * @Date: 2022-07-04 22:12:13
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-10 17:55:00
+ * @Last Modified time: 2022-08-11 18:20:48
  */
 
 import { AppDataSource } from '@app/data-source';
-import { Conversation } from '@toys/common/lib/entity/im/Conversation';
+import { Conversation } from '@lilong767676/common/lib/entity/im/Conversation';
 import {
   ConversationTargetType,
   ConversationDto,
-} from '@toys/common/lib/model/conversation';
+} from '@lilong767676/common/lib/model/conversation';
 
 /** 数据库表 */
 const conversationRepository = AppDataSource.getRepository(Conversation);

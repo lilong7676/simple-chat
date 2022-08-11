@@ -3,20 +3,20 @@
  * @Author: lilonglong
  * @Date: 2022-04-29 22:36:54
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-10 17:55:00
+ * @Last Modified time: 2022-08-11 18:20:48
  */
 import { AppDataSource } from '@app/data-source';
 import { v4 as uuidv4 } from 'uuid';
-import { Message } from '@toys/common/lib/entity/im/Message';
-import { ConversationTargetType } from '@toys/common/lib/model/conversation';
-import { ClientToServerResponse } from '@toys/common/lib/types/io-socket';
+import { Message } from '@lilong767676/common/lib/entity/im/Message';
+import { ConversationTargetType } from '@lilong767676/common/lib/model/conversation';
+import { ClientToServerResponse } from '@lilong767676/common/lib/types/io-socket';
 import {
   MessageType,
   PersistFlag,
   MessageNotifyContent,
   MessageNotifyContentType,
   MessageDto,
-} from '@toys/common/lib/model/message';
+} from '@lilong767676/common/lib/model/message';
 import { MIo } from 'src/typings/socket';
 import { getCacheManager } from '@app/cache-manager';
 import { getOfflineMessageCacheKey } from './utils';

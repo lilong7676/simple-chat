@@ -6,8 +6,8 @@ services:
       image: mysql:8
       container_name: mysql-simple-chat
       volumes:
-        - /mydata/mysql/log:/var/log/mysql
-        - //mydata/mysql/data:/var/lib/mysql
+        - /Users/lilonglong/Desktop/long_git/simple-chat/mydata/mysql/log:/var/log/mysql
+        - /Users/lilonglong/Desktop/long_git/simple-chat/mydata/mysql/data:/var/lib/mysql
       environment:
         - MYSQL_ROOT_PASSWORD=${DB_PASSWD}
         - MYSQL_USER=${DB_USER}
@@ -17,16 +17,20 @@ services:
         # 使用宿主机的3306端口映射到容器的3306端口
         # 宿主机：容器
         - "3306:3306"
+      networks: # 自定义网络
+       - my-network
 
     redis:
       container_name: redis-simple-chat
       image: redis:3.0.2
       volumes:
-        - /mydata/redis/data:/data
-        - /mydata/redis/conf/redis.conf:/etc/redis/redis.conf
+        - /Users/lilonglong/Desktop/long_git/simple-chat/mydata/redis/data:/data
+        - /Users/lilonglong/Desktop/long_git/simple-chat/mydata/redis/conf/redis.conf:/etc/redis/redis.conf
       ports:
         - "6379:6379"
       restart: always
+      networks: # 自定义网络
+       - my-network
 
     server:
         container_name: server-simple-chat
@@ -38,4 +42,9 @@ services:
         depends_on:
             - redis
             - mysql
+        networks: # 自定义网络
+          - my-network
+          
+networks:
+  my-network:
 

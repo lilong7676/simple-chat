@@ -1,13 +1,13 @@
 import { Like, Not, In } from 'typeorm';
 import { AppDataSource } from '@app/data-source';
-import { User } from '@toys/common/lib/entity/User';
+import { User } from '@lilong767676/common/lib/entity/User';
 import {
   PubSubChannel,
   PubSubRequestFriendData,
   PubSubUpdateFriendRequestStatusData,
-} from '@toys/common/lib/types/cache-pubsub-data';
-import { Friend, FriendReqStatus } from '@toys/common/lib/entity/im/Friend';
-import { CreateUserDto } from '@toys/common/lib/model/User';
+} from '@lilong767676/common/lib/types/cache-pubsub-data';
+import { Friend, FriendReqStatus } from '@lilong767676/common/lib/entity/im/Friend';
+import { CreateUserDto } from '@lilong767676/common/lib/model/user';
 import { getCacheManager } from '@app/cache-manager';
 
 /** 过滤掉用户敏感信息 */

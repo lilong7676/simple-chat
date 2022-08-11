@@ -3,7 +3,7 @@
  * @Author: lilonglong
  * @Date: 2022-06-16 22:57:57
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-11 09:44:11
+ * @Last Modified time: 2022-08-11 18:21:01
  */
 
 import React, {
@@ -23,7 +23,7 @@ import {
   ChatClientEventTypes,
   FetchHistoryMessagesOptions,
 } from '@toys/chat-client-sdk';
-import { IMessage } from '@toys/common/lib/model/message';
+import { IMessage } from '@lilong767676/common/lib/model/message';
 import AppPage from '@/layouts/templates/app-page';
 import ChatMessageList from '@/components/chat-message-list';
 import { StateContext } from '@/store';

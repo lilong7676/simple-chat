@@ -3,7 +3,7 @@
  * @Author: lilonglong
  * @Date: 2022-04-27 22:59:52
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-10 17:55:00
+ * @Last Modified time: 2022-08-11 18:20:48
  */
 import { Server } from 'http';
 import { Server as SocketServer } from 'socket.io';
@@ -12,7 +12,7 @@ import {
   ClientToServerEvents,
   InterServerEvents,
   SocketData,
-} from '@toys/common/lib/types/io-socket';
+} from '@lilong767676/common/lib/types/io-socket';
 import {
   getAccessToken,
   isTokenNotExpires,

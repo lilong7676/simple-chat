@@ -4,10 +4,10 @@
  * @Author: lilonglong
  * @Date: 2022-04-27 22:18:36
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-10 17:55:00
+ * @Last Modified time: 2022-08-11 18:49:07
  */
 import { createClient } from 'redis';
-import { PubSubChannel } from '@toys/common/lib/types/cache-pubsub-data';
+import { PubSubChannel } from '@lilong767676/common/lib/types/cache-pubsub-data';
 import logger from '@common/utils/logger';
 
 /**
@@ -27,8 +27,8 @@ class CacheManager {
   constructor() {
     const client = createClient({
       socket: {
-        host: '127.0.0.1',
-        port: 6379,
+        host: process.env.REDIS_HOST,
+        port: Number(process.env.REDIS_PORT),
       },
     });
 

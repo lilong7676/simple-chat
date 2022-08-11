@@ -3,10 +3,10 @@
  * @Author: lilonglong
  * @Date: 2022-06-30 22:42:26
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-11 09:44:11
+ * @Last Modified time: 2022-08-11 18:21:01
  */
 import React, { RefObject, useCallback, useContext } from 'react';
-import { IMessage } from '@toys/common/lib/model/message';
+import { IMessage } from '@lilong767676/common/lib/model/message';
 import ChatMessageListItem from './message-list-item';
 import { StateContext } from '@/store';
 import './index.less';

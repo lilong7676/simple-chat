@@ -5,4 +5,4 @@ RUN npm install -g pnpm --registry=https://registry.npm.taobao.org && pnpm i
 
 ENV NODE_ENV production
 
-# CMD ["npm","start"]
+CMD ["npm","start"]

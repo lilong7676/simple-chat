@@ -1,5 +1,5 @@
 {
-  "name": "@toys/common",
+  "name": "@lilong767676/common",
   "version": "1.0.0",
   "description": "a toys common",
   "main": "lib/index.d.ts",
@@ -7,9 +7,13 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf lib/ && tsc --build --force"
+    "build": "rm -rf lib/ && tsc --build --force",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "moment": "^2.29.3",

@@ -1,4 +1,4 @@
-import { FriendRelationItem } from '@toys/common/lib/entity/im/Friend';
+import { FriendRelationItem } from '@lilong767676/common/lib/entity/im/Friend';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { getAppManager } from '..';
 

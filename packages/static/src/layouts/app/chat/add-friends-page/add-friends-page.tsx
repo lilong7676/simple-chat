@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Input, Toast, List, Empty, Button } from 'antd-mobile';
 import { AddOutline } from 'antd-mobile-icons';
-import { UserDto } from '@toys/common/lib/model/User';
+import { UserDto } from '@lilong767676/common/lib/model/user';
 import AppPage from '@/layouts/templates/app-page';
 import { fetchSearchUsers, fetchStrangerList, fetchTryAddFriend } from '@/api';
 import styles from './index.module.less';

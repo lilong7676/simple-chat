@@ -11,7 +11,7 @@
   "author": "Longlong Li <lilong7676@outlook.com>",
   "license": "ISC",
   "dependencies": {
-    "@toys/common": "workspace:*",
+    "@lilong767676/common": "^1.0.0",
     "@toys/chat-client-sdk": "workspace:*",
     "@toys/navigation-controller": "workspace:*",
     "ahooks": "^3.4.1",

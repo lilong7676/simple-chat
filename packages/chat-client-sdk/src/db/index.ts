@@ -3,18 +3,18 @@
  * @Author: lilonglong
  * @Date: 2022-06-15 22:35:07
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-11 09:50:08
+ * @Last Modified time: 2022-08-11 18:21:09
  */
 import Dexie from 'dexie';
 import {
   MessageDto,
   IMessage,
   PersistFlag,
-} from '@toys/common/lib/model/message';
+} from '@lilong767676/common/lib/model/message';
 import {
   IConversation,
   ConversationTargetType,
-} from '@toys/common/lib/model/conversation';
+} from '@lilong767676/common/lib/model/conversation';
 import { FetchHistoryMessagesOptions } from '../typing';
 
 export default class ImDB extends Dexie {

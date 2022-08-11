@@ -4,7 +4,7 @@ import {
   ClientToServerEvents,
   InterServerEvents,
   SocketData,
-} from '@toys/common/lib/types/io-socket';
+} from '@lilong767676/common/lib/types/io-socket';
 
 export type MIo = Server<
   ClientToServerEvents,
