@@ -18,7 +18,7 @@ importers:
 
   packages/chat-client-sdk:
     specifiers:
-      '@lilong767676/common': ^1.0.0
+      '@lilong767676/common': workspace:*
       dexie: ^3.2.2
       eventemitter3: ^4.0.7
       socket.io-client: ^4.5.0
@@ -76,7 +76,7 @@ importers:
 
   packages/server-express:
     specifiers:
-      '@lilong767676/common': ^1.0.0
+      '@lilong767676/common': workspace:*
       '@types/express': ^4.17.13
       '@types/node': ^17.0.23
       '@types/oauth2-server': ^3.0.13
@@ -147,7 +147,7 @@ importers:
       '@babel/preset-react': ^7.16.7
       '@babel/preset-typescript': ^7.16.7
       '@babel/runtime': ^7.17.2
-      '@lilong767676/common': ^1.0.0
+      '@lilong767676/common': workspace:*
       '@pmmmwh/react-refresh-webpack-plugin': ^0.5.4
       '@toys/chat-client-sdk': workspace:*
       '@toys/navigation-controller': workspace:*

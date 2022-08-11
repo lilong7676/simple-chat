@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@lilong767676/common": "^1.0.0",
+    "@lilong767676/common": "workspace:*",
     "dexie": "^3.2.2",
     "eventemitter3": "^4.0.7",
     "socket.io-client": "^4.5.0",
