@@ -1,4 +1,4 @@
 {
-  "*.{js,jsx,ts,tsx}": ["eslint --fix --resolve-plugins-relative-to .", "yarn run test:staged"],
+  "*.{js,jsx,ts,tsx}": ["eslint --fix --resolve-plugins-relative-to .", "npm run test:staged"],
   "*.{css,less,js,jsx,ts,tsx,json,yml,yaml,md}": ["prettier --write"]
 }

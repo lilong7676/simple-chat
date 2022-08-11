@@ -6,7 +6,7 @@
     "baseUrl": "./",
     "outDir": "./dist",
     "rootDir": "src",
-    "target": "ES6",
+    "target": "ESNext",
     "module": "commonjs",
     "paths": {
       "@app/*": ["./src/app/*"],

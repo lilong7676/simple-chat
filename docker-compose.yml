@@ -1,0 +1,41 @@
+version: '3.0'
+
+services:
+    mysql:
+      restart: always
+      image: mysql:8
+      container_name: mysql-simple-chat
+      volumes:
+        - /mydata/mysql/log:/var/log/mysql
+        - //mydata/mysql/data:/var/lib/mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=${DB_PASSWD}
+        - MYSQL_USER=${DB_USER}
+        - MYSQL_DATABASE=${DB_DATABASE}
+        - TZ=Asia/Shanghai
+      ports:
+        # 使用宿主机的3306端口映射到容器的3306端口
+        # 宿主机：容器
+        - "3306:3306"
+
+    redis:
+      container_name: redis-simple-chat
+      image: redis:3.0.2
+      volumes:
+        - /mydata/redis/data:/data
+        - /mydata/redis/conf/redis.conf:/etc/redis/redis.conf
+      ports:
+        - "6379:6379"
+      restart: always
+
+    server:
+        container_name: server-simple-chat
+        build:
+          context: .
+        ports:
+          - "3000:3000"
+        restart: on-failure
+        depends_on:
+            - redis
+            - mysql
+

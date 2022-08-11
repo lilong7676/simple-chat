@@ -3,16 +3,14 @@
  * @Author: lilonglong
  * @Date: 2022-04-27 22:59:52
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-10 16:38:31
+ * @Last Modified time: 2022-08-11 14:48:18
  */
-import 'module-alias/register';
 import express from 'express';
 import http from 'http';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import cors from 'cors';
 import { initCacheManager } from './cache-manager';
-import 'dotenv/config';
 import { AppDataSource } from '@app/data-source';
 import { authRouter } from '@modules/oauth';
 import { userRouter } from '@modules/user';
