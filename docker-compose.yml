@@ -6,11 +6,10 @@ services:
       image: mysql:8
       container_name: mysql-simple-chat
       volumes:
-        - /Users/lilonglong/Desktop/long_git/simple-chat/mydata/mysql/log:/var/log/mysql
-        - /Users/lilonglong/Desktop/long_git/simple-chat/mydata/mysql/data:/var/lib/mysql
+        - /usr/simple-chat/mydata/mysql/log:/var/log/mysql
+        - /usr/simple-chat/mydata/mysql/data:/var/lib/mysql
       environment:
         - MYSQL_ROOT_PASSWORD=${DB_PASSWD}
-        - MYSQL_USER=${DB_USER}
         - MYSQL_DATABASE=${DB_DATABASE}
         - TZ=Asia/Shanghai
       ports:
@@ -24,8 +23,8 @@ services:
       container_name: redis-simple-chat
       image: redis:3.0.2
       volumes:
-        - /Users/lilonglong/Desktop/long_git/simple-chat/mydata/redis/data:/data
-        - /Users/lilonglong/Desktop/long_git/simple-chat/mydata/redis/conf/redis.conf:/etc/redis/redis.conf
+        - /usr/simple-chat/mydata/redis/data:/data
+        - /usr/simple-chat/mydata/redis/conf/redis.conf:/etc/redis/redis.conf
       ports:
         - "6379:6379"
       restart: always
@@ -44,7 +43,7 @@ services:
             - mysql
         networks: # 自定义网络
           - my-network
-          
+
 networks:
   my-network:
 
