@@ -20,8 +20,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "cz",
     "commitlint": "commitlint",
-    "start": "pnpm --filter @toys/server run build && pnpm --filter @toys/server run start",
-    "build:static": "pnpm --filter @toys/static run build && "
+    "start": "npm run build:server && npm run build:static && npm run start:server",
+    "build:server": "pnpm --filter @toys/server run build",
+    "build:static": "pnpm --filter @toys/static run build",
+    "start:server": "pnpm --filter @toys/server run start"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",

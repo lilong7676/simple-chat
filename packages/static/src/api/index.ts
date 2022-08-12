@@ -2,10 +2,14 @@ import axios from 'axios';
 import { URLSearchParams } from 'url';
 import { UserDto, CreateUserDto } from '@lilong767676/common/lib/model/user';
 import { UpdateIncomingFriendRequestParams } from '@lilong767676/common/lib/types/api-params';
-import { FriendRelationItem } from '@/../../common/entity/im/Friend';
+import { FriendRelationItem } from '@lilong767676/common/lib/entity/im/Friend';
 import { ApiResult } from '@/typings';
 
-axios.defaults.baseURL = 'http://localhost:3000';
+if (process.env.NODE_ENV === 'production' && !location.host.includes('localhost')) {
+  axios.defaults.baseURL = 'http://119.91.47.174';
+} else {
+  axios.defaults.baseURL = 'http://localhost:3000';
+}
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 
 /**
