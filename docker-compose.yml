@@ -39,7 +39,7 @@ services:
           - static-content:/usr/local/simple-chat/packages/static/dist # 将打包生成的静态文件共享到容器的 static-content目录中
         ports:
           - "3000:3000"
-        restart: on-failure
+        restart: always
         depends_on:
             - redis
             - mysql
@@ -49,13 +49,13 @@ services:
     nginx:
       image: nginx:1.21.0
       container_name: nginx-simple-chat
-      restart: always
       volumes:
         - static-content:/usr/share/nginx/html # 挂载当前静态网页文件目录
         - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf # 挂载 Nginx 配置目录
       ports:
         - 80:80
         # - 443:443
+      restart: always
       networks:
         my-network:
       depends_on:

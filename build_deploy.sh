@@ -2,6 +2,13 @@
 
 image=simple-chat_server
 
+# 先停止容器运行
+docker stop nginx-simple-chat
+docker stop server-simple-chat
+docker stop mysql-simple-chat
+docker stop redis-simple-chat
+
+# 删除镜像
 docker image rm $image
 
 docker compose up -d
