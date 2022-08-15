@@ -11,7 +11,6 @@ services:
       environment:
         - MYSQL_ROOT_PASSWORD=${DB_PASSWD}
         - MYSQL_DATABASE=${DB_DATABASE}
-        - TZ=Asia/Shanghai
       ports:
         # 使用宿主机的3306端口映射到容器的3306端口
         # 宿主机：容器
