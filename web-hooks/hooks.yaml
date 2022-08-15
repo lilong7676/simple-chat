@@ -1,0 +1,29 @@
+# 暂未启用
+- id: deploy-simple-chat
+  execute-command: "/root/hooks/simple-chat/deploy.sh"
+  command-working-directory: "/root/hooks/simple-chat"
+  pass-arguments-to-command:
+    - source: payload
+      name: repository.clone_url
+    - source: payload
+      name: head_commit.id
+  trigger-rule:
+    and:
+      - match:
+          type: payload-hmac-sha1
+          secret: abcdef
+          parameter:
+            source: header
+            name: X-Hub-Signature
+      - match:
+          type: value
+          value: push
+          parameter:
+            source: header
+            name: X-GitHub-Event
+      - match:
+          type: value
+          value: refs/heads/main
+          parameter:
+            source: payload
+            name: ref

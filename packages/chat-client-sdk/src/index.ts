@@ -26,6 +26,16 @@ export * from './typing';
 // 发送消息到服务器的 超时时间
 const SEND_TIMEOUT = 5000;
 
+let sockerUrl;
+if (
+  process.env.NODE_ENV === 'production' &&
+  !location.host.includes('localhost')
+) {
+  sockerUrl = 'http://119.91.47.174';
+} else {
+  sockerUrl = 'http://localhost:3000';
+}
+
 export interface ChatClientOptions {
   userId: string;
   accessToken: string;
@@ -76,7 +86,7 @@ export class ChatClient extends EventEmitter<ChatClientEventTypes> {
     const socket: Socket<
       ServerToClientEvents,
       LocalClientToServerEventsForClient
-    > = io('localhost:3000', {
+    > = io(sockerUrl, {
       auth: {
         token: accessToken,
       },

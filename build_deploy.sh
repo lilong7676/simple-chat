@@ -11,7 +11,7 @@ docker stop redis-simple-chat
 # 删除镜像
 docker image rm $image
 
-docker compose up -d
+docker-compose up -d
 
 echo "docker 部署并运行成功"
 echo ${image}
