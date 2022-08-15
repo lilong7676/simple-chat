@@ -15,7 +15,7 @@ if [ "$1" != "" ]; then
 
     echo "git clone done."
 
-    cd simple-chat
+    cd ~/simple-chat-git-repo/simple-chat
 
     sh -x ./build_deploy.sh
 
