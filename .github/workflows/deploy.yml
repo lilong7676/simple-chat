@@ -39,4 +39,7 @@ jobs:
           ssh-add deploy.key
           echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
           ssh root@${{secrets.SERVER_IP}} "cd /root/hooks/simple-chat && sh deploy.sh git@github.com:lilong7676/simple-chat.git"
+          
+      - name: delete ssh key
+        run: rm -rf ~/.ssh/id_rsa
 
