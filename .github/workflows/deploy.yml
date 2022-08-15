@@ -38,5 +38,5 @@ jobs:
           chmod 0600 deploy.key
           ssh-add deploy.key
           echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-          ssh root@${{secrets.SERVER_IP}} "cd /root/hooks/simple-chat && sh deploy.sh https://github.com/lilong7676/simple-chat.git"
+          ssh root@${{secrets.SERVER_IP}} "cd /root/hooks/simple-chat && sh deploy.sh git@github.com:lilong7676/simple-chat.git"
 

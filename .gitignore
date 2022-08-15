@@ -3,6 +3,7 @@ dist
 lib
 logs
 mydata
+web-hooks
 
 .vscode
 .history
