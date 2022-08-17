@@ -3,11 +3,11 @@
  * @Author: lilonglong
  * @Date: 2022-05-24 22:26:44
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-03 15:38:25
+ * @Last Modified time: 2022-08-17 15:10:36
  */
 
 import React from 'react';
-import { NavigationController } from '@toys/navigation-controller';
+import { NavigationController } from '@lilong767676/navigation-controller';
 import App from '@/layouts/app';
 import ChatHome from '@/layouts/app/chat';
 import ChatPage from '@/layouts/app/chat/chat-page';

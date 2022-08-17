@@ -3,10 +3,10 @@
  * @Author: lilonglong
  * @Date: 2022-05-24 22:35:01
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-02 15:45:49
+ * @Last Modified time: 2022-08-17 15:05:35
  */
 import React, { ReactNode } from 'react';
-import { NavigationController } from '@toys/navigation-controller';
+import { NavigationController } from '@lilong767676/navigation-controller';
 import NavBar from '@/components/nav-bar';
 
 interface AppPageProps {

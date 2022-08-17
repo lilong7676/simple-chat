@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Skeleton, DotLoading } from 'antd-mobile';
-import { NavigationController } from '@toys/navigation-controller';
+import { NavigationController } from '@lilong767676/navigation-controller';
 import { StateContext } from '@/store';
 import { setAxiosDefaultAccesstoken, fetchProfile } from '@/api';
 import Login from './login';
