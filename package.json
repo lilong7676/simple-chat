@@ -25,6 +25,10 @@
     "build:static": "pnpm --filter @toys/static run build",
     "start:server": "pnpm --filter @toys/server run start"
   },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",

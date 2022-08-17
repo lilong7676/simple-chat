@@ -10,9 +10,20 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lilong7676/simple-chat.git",
+    "directory": "packages/navigation-controller"
+  },
+  "homepage": "https://github.com/lilong7676/simple-chat/tree/main/packages/navigation-controller",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "iOS-like-navigation",
+    "typescript",
+    "react"
+  ],
   "dependencies": {
     "classnames": "^2.3.1",
     "history": "^5.3.0"
@@ -33,5 +44,5 @@
     "react-dom": "^17.0.2"
   },
   "author": "lilong7676@outlook.com",
-  "license": "ISC"
+  "license": "MIT"
 }
