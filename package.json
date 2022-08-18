@@ -14,6 +14,7 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "postinstall": "husky install",
     "clean-install": "rm -rf node_modules && rm -rf ./packages/*/node_modules && pnpm -r i",
     "dev-static": "pnpm --filter @toys/static run start",
     "dev-server": "pnpm --filter @toys/server run dev",
@@ -23,7 +24,8 @@
     "start": "npm run build:server && npm run build:static && npm run start:server",
     "build:server": "pnpm --filter @toys/server run build",
     "build:static": "pnpm --filter @toys/static run build",
-    "start:server": "pnpm --filter @toys/server run start"
+    "start:server": "pnpm --filter @toys/server run start",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -46,6 +48,8 @@
     "eslint-plugin-react": "^7.29.3",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-webpack-plugin": "^3.1.1",
+    "git-cz": "^4.7.6",
+    "husky": "^7.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.5.1",
     "typescript": "^4.6.2"
