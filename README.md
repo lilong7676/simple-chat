@@ -18,10 +18,10 @@
 ```
 $ pnpm install && npm run dev-server && npm run dev-static
 ```
-then open *localhost:4000* in browser.
+then open *localhost:3000/app* in browser.
 
 ### build for production:
 ```
 $ docker compose up
 ```
-then open *localhost* in browser.
+then open *localhost/app* in browser.

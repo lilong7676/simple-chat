@@ -3,9 +3,10 @@
  * @Author: lilonglong
  * @Date: 2022-04-27 22:59:52
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-11 14:48:18
+ * @Last Modified time: 2022-08-18 16:36:41
  */
 import express from 'express';
+import path from 'path';
 import http from 'http';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
@@ -28,6 +29,16 @@ AppDataSource.initialize()
 
     // create and setup express app
     const app = express();
+
+    // TODO 优化点：使用配置文件，不要写死
+    app.set('views', path.resolve(__dirname, '../../../static/dist'));
+    app.set('view engine', 'ejs');
+    app.get('/app', function (req, res) {
+      res.render('index', {
+        title: 'simple-chat',
+      });
+    });
+
     // 安全相关
     app.use(helmet());
     app.use(cors());
