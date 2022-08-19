@@ -10,12 +10,12 @@ const router: Router = express.Router();
  */
 router.post(
   '/register',
-  async function (req: Request, res: Response, next: NextFunction) {
+  async (req: Request, res: Response, next: NextFunction) => {
     try {
       const results = await service.createUser(req.body);
       return res.json(results);
     } catch (error) {
-      next(error);
+      return next(error);
     }
   }
 );
@@ -23,12 +23,12 @@ router.post(
 /**
  * 获取个人信息
  */
-router.get('/profile', async function (req, res, next) {
+router.get('/profile', async (req, res, next) => {
   try {
     const user = await service.getUserById(req.userId);
     return res.json(user);
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -41,7 +41,7 @@ router.get('/getUserByName', async (req, res, next) => {
     const user = await service.getUserByName(req.query.name as string);
     return res.json(user);
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -58,7 +58,7 @@ router.get('/searchUsers', async (req, res, next) => {
     });
     return res.json(filterUsers);
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -68,14 +68,12 @@ router.get('/searchUsers', async (req, res, next) => {
  */
 router.post('/addFriend', async (req, res, next) => {
   try {
-    const body: {
-      userId: string;
-    } = req.body;
+    const { body } = req;
 
     const result = await service.addFriendById(req.userId, body.userId);
     return res.json(result);
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -87,7 +85,7 @@ router.get('/getIncomingFriendRequests', async (req, res, next) => {
     const result = await service.getIncomingFriendRequests(req.userId);
     return res.json(result);
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -96,6 +94,7 @@ router.get('/getIncomingFriendRequests', async (req, res, next) => {
  */
 router.post('/updateIncomingFriendRequest', async (req, res, next) => {
   try {
+    // eslint-disable-next-line prefer-destructuring
     const body: UpdateIncomingFriendRequestParams = req.body;
 
     const result = await service.updateFriendRequestStatus(
@@ -105,7 +104,7 @@ router.post('/updateIncomingFriendRequest', async (req, res, next) => {
     );
     return res.json(result);
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -117,7 +116,7 @@ router.get('/getFriendList', async (req, res, next) => {
     const result = await service.getFriendList(req.userId);
     return res.json(result);
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 
@@ -129,7 +128,7 @@ router.get('/getStrangerList', async (req, res, next) => {
     const result = await service.getRandomStrangerList(req.userId);
     return res.json(result);
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 

@@ -2,7 +2,7 @@ import React, { useRef, useState, useContext, useCallback } from 'react';
 import { Form, Input, Button, Divider, Toast } from 'antd-mobile';
 import type { ToastHandler } from 'antd-mobile/es/components/toast';
 import { fetchLogin, fetchRegister } from '@/api';
-import { StateContext, DispatchContext } from '@/store';
+import { DispatchContext } from '@/store';
 import { actionSetLoginInfo } from '@/store/actions';
 import { LocalStorageKeys } from '@/constants';
 import style from './index.module.less';
@@ -17,7 +17,6 @@ enum UIStatus {
 interface IProps {}
 
 const Login: React.FC<IProps> = () => {
-  const state = useContext(StateContext);
   const dispatch = useContext(DispatchContext);
 
   const [localState, setLocalState] = useState({
@@ -126,7 +125,7 @@ const Login: React.FC<IProps> = () => {
         name="login"
         onFinish={onFinish}
         footer={
-          <Button block type="submit" color="primary" size="large">
+          <Button block={true} type="submit" color="primary" size="large">
             {statusDesc}
           </Button>
         }
@@ -151,7 +150,7 @@ const Login: React.FC<IProps> = () => {
       <div className={style.footer}>
         <Divider>或</Divider>
         <Button
-          block
+          block={true}
           color="primary"
           onClick={() =>
             setLocalState(state => {

@@ -24,7 +24,7 @@ const config: Configuration = {
   output: isDev
     ? {
         path: localConfig.distDir,
-        publicPath: `http://${localConfig.devServer.host}:${localConfig.devServer.port}`,
+        publicPath: `http://${localConfig.devServer.host}:${localConfig.devServer.port}/`,
       }
     : {
         path: localConfig.distDir,
@@ -167,8 +167,8 @@ const config: Configuration = {
       new HtmlWebpackPlugin({
         template: 'public/index.pug',
         filename: 'index.ejs',
-        minify: false,
-        hash: true,
+        minify: !isDev,
+        hash: !isDev,
         favicon: 'public/favicon.ico',
         alwaysWriteToDisk: isDev,
       }),
@@ -204,6 +204,7 @@ const config: Configuration = {
         target: 'http://localhost:3000',
       },
     },
+    headers: { 'Access-Control-Allow-Origin': '*' },
     // devMiddleware: {
     //   index: false,
     //   writeToDisk: true,

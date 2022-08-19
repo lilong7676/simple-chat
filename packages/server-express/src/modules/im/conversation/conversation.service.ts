@@ -3,7 +3,7 @@
  * @Author: lilonglong
  * @Date: 2022-07-04 22:12:13
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-11 18:20:48
+ * @Last Modified time: 2022-08-19 10:14:39
  */
 
 import { AppDataSource } from '@app/data-source';
@@ -52,7 +52,7 @@ export const createConversation = async (
   conversation2.targetId = userId;
   conversation2.targetType = targetType;
 
-  return await conversationRepository.save([conversation, conversation2]);
+  return conversationRepository.save([conversation, conversation2]);
 };
 
 /**

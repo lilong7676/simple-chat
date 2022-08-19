@@ -3,7 +3,7 @@
  * @Author: lilonglong
  * @Date: 2022-06-16 22:32:31
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-06-16 16:22:28
+ * @Last Modified time: 2022-08-19 10:22:04
  */
 import React, { useRef, useCallback, useMemo } from 'react';
 import { Skeleton, List, SwipeAction, Toast } from 'antd-mobile';
@@ -72,8 +72,8 @@ const NewFriendsPage = () => {
     <AppPage navBarChildren="新朋友">
       {loading && (
         <div>
-          <Skeleton.Title animated />
-          <Skeleton.Paragraph lineCount={5} animated />
+          <Skeleton.Title animated={true} />
+          <Skeleton.Paragraph lineCount={5} animated={true} />
         </div>
       )}
       {!loading && (

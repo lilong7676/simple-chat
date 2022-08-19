@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import OAuth2Server from 'oauth2-server';
 import authServer from '@modules/oauth/oauth-server';
 
@@ -18,13 +18,12 @@ const Auth = async (req: Request, res: Response, next: NextFunction) => {
     const token = await authServer.authenticate(authReq, authRes);
     req.userId = token.user.id;
     if (token) {
-      next();
-    } else {
-      res.status(401).end();
+      return next();
     }
   } catch (error) {
     res.status(401).json(error);
   }
+  return undefined;
 };
 
 export default Auth;

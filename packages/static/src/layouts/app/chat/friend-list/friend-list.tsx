@@ -3,7 +3,7 @@
  * @Author: lilonglong
  * @Date: 2022-05-11 22:09:00
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-11 18:31:16
+ * @Last Modified time: 2022-08-19 10:45:16
  */
 import React, { useCallback, useRef, useContext, useMemo } from 'react';
 import { PullToRefresh, List, Image, SearchBar, Empty } from 'antd-mobile';
@@ -45,7 +45,7 @@ const FriendList = () => {
 
   // 跳转到 聊天页
   const goChatPage = useCallback((target: UserDto) => {
-    push(RouteNames.chatPage, { targetId: target.id,  });
+    push(RouteNames.chatPage, { targetId: target.id });
   }, []);
 
   return (
@@ -59,8 +59,8 @@ const FriendList = () => {
           <SearchBar
             ref={searchRef}
             placeholder="搜索好友"
-            showCancelButton
-            onSearch={val => {}}
+            showCancelButton={true}
+            onSearch={_val => {}}
             onFocus={() => {}}
             onBlur={() => {}}
             onClear={() => {}}

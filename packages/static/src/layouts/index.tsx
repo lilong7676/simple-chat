@@ -68,7 +68,7 @@ const Layout = (props: LayoutProps) => {
           <h3>登录中</h3>
         </div>
         <div style={{ width: '100%', height: '50%' }}>
-          <Skeleton.Paragraph lineCount={5} animated />
+          <Skeleton.Paragraph lineCount={5} animated={true} />
         </div>
       </div>
     );

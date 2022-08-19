@@ -27,7 +27,7 @@ const model = {
  * oauth2Server
  */
 const oauth = new OAuth2Server({
-  model: model,
+  model,
   accessTokenLifetime: 7 * 24 * 3600,
   refreshTokenLifetime: 7 * 24 * 3600,
   requireClientAuthentication: {

@@ -3,20 +3,21 @@
  * @Author: lilonglong
  * @Date: 2022-04-28 22:17:42
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-11 18:20:48
+ * @Last Modified time: 2022-08-19 10:43:40
  */
 import {
   PubSubRequestFriendData,
   PubSubUpdateFriendRequestStatusData,
+  PubSubChannel,
 } from '@lilong767676/common/lib/types/cache-pubsub-data';
 import { Message } from '@lilong767676/common/lib/entity/im/Message';
 import { MessageDto } from '@lilong767676/common/lib/model/message';
-import { PubSubChannel } from '@lilong767676/common/lib/types/cache-pubsub-data';
 import { ConversationTargetType } from '@lilong767676/common/lib/model/conversation';
 import { getCacheManager } from '@app/cache-manager';
 import * as messageService from '@modules/im/message/message.service';
 import * as conversationService from '@modules/im/conversation/conversation.service';
 import { MIo, MSocket } from 'src/typings/socket';
+
 export class IoManager {
   static manager: IoManager;
 
@@ -28,6 +29,7 @@ export class IoManager {
 
   constructor(io: MIo) {
     if (IoManager.manager) {
+      // eslint-disable-next-line no-constructor-return
       return IoManager.manager;
     }
     this.io = io;
@@ -66,7 +68,7 @@ export class IoManager {
 
     // 响应 client 端获取离线消息
     socket.on('fetchOfflineMessages', async (_data, callback) => {
-      const userId = socket.data.userId;
+      const { userId } = socket.data;
       console.log('fetchOfflineMessages', userId);
       if (!userId) {
         return;
@@ -78,7 +80,7 @@ export class IoManager {
           message: 'ok',
           result: offlineMessages,
         });
-        //FIXME 这里可能会有bug,如果 client 没有收到离线消息怎么办？
+        // FIXME 这里可能会有bug,如果 client 没有收到离线消息怎么办？
         // 删除离线消息
         if (offlineMessages.length) {
           await messageService.deleteOfflineMessages(userId);
@@ -93,7 +95,7 @@ export class IoManager {
 
     // 响应 client 端获取会话列表
     socket.on('fetchConversations', async (_data, callback) => {
-      const userId = socket.data.userId;
+      const { userId } = socket.data;
       console.log('fetchConversations', userId);
       if (!userId) {
         return;
@@ -121,7 +123,7 @@ export class IoManager {
    * @param socket
    */
   public async handleUserLogined(socket: MSocket) {
-    const userId = socket.data.userId;
+    const { userId } = socket.data;
     if (!userId) return;
 
     // join userId， 方便根据 userId 获取 socket
@@ -176,7 +178,7 @@ export class IoManager {
     data: PubSubUpdateFriendRequestStatusData
   ) {
     console.log('handleOnUpdateFriendRequestStatus', data);
-    //TODO
+    // TODO
   }
 
   /**
@@ -208,8 +210,8 @@ export class IoManager {
   /**
    * 检查用户好友请求信息
    */
-  private async checkUserFriendRequests(socket: MSocket) {
-    const userId = socket.data.userId || '';
+  private async checkUserFriendRequests(_socket: MSocket) {
+    // const userId = socket.data.userId || '';
     // this.cacheManager?.get()
   }
 }

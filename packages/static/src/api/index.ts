@@ -5,7 +5,10 @@ import { UpdateIncomingFriendRequestParams } from '@lilong767676/common/lib/type
 import { FriendRelationItem } from '@lilong767676/common/lib/entity/im/Friend';
 import { ApiResult } from '@/typings';
 
-if (process.env.NODE_ENV === 'production' && !location.host.includes('localhost')) {
+if (
+  process.env.NODE_ENV === 'production' &&
+  !location.host.includes('localhost')
+) {
   axios.defaults.baseURL = 'http://119.91.47.174';
 } else {
   axios.defaults.baseURL = 'http://localhost:3000';

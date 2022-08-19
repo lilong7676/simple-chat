@@ -4,7 +4,7 @@
  * @Author: lilonglong
  * @Date: 2022-04-27 22:18:36
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-11 18:49:07
+ * @Last Modified time: 2022-08-19 10:12:50
  */
 import { createClient } from 'redis';
 import { PubSubChannel } from '@lilong767676/common/lib/types/cache-pubsub-data';
@@ -76,19 +76,19 @@ class CacheManager {
 
   /** 订阅 channel */
   async subscribe(channel: PubSubChannel, listener: SubListener) {
-    logger.info('cacheManager subscribe channel:' + channel);
+    logger.info(`cacheManager subscribe channel:${channel}`);
     return this.subscriber.subscribe(channel, listener);
   }
 
   /** 发布消息到 channel */
   async publish(channel: PubSubChannel, data: string) {
-    logger.info('cacheManager publish channel:' + channel + 'data:' + data);
+    logger.info(`cacheManager publish channel:${channel}data:${data}`);
     return this.client.publish(channel, data);
   }
 
   /** 解除订阅 channel */
   async unsubscribe(channel: PubSubChannel) {
-    logger.info('cacheManager unsubscribe channel:' + channel);
+    logger.info(`cacheManager unsubscribe channel:${channel}`);
     return this.subscriber.unsubscribe(channel);
   }
 }
@@ -97,12 +97,8 @@ class CacheManager {
 export const initCacheManager = async () => {
   if (!cacheManager) {
     cacheManager = new CacheManager();
-    try {
-      await cacheManager.client.connect();
-      await cacheManager.subscriber.connect();
-    } catch (error) {
-      throw error;
-    }
+    await cacheManager.client.connect();
+    await cacheManager.subscriber.connect();
   }
   return cacheManager;
 };

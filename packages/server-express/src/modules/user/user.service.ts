@@ -6,7 +6,10 @@ import {
   PubSubRequestFriendData,
   PubSubUpdateFriendRequestStatusData,
 } from '@lilong767676/common/lib/types/cache-pubsub-data';
-import { Friend, FriendReqStatus } from '@lilong767676/common/lib/entity/im/Friend';
+import {
+  Friend,
+  FriendReqStatus,
+} from '@lilong767676/common/lib/entity/im/Friend';
 import { CreateUserDto } from '@lilong767676/common/lib/model/user';
 import { getCacheManager } from '@app/cache-manager';
 
@@ -15,6 +18,7 @@ const filterUser = (user: User | null) => {
   if (!user) {
     return user;
   }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { password, ...tUser } = user;
   return tUser as User;
 };
@@ -77,6 +81,7 @@ export const createUser = async (createUserDto: CreateUserDto) => {
     ],
   });
   if (userExist) {
+    // eslint-disable-next-line no-throw-literal
     throw { message: '用户名或其他信息已被使用' };
   }
 

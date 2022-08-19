@@ -3,7 +3,7 @@
  * @Author: lilonglong
  * @Date: 2022-04-27 22:59:52
  * @Last Modified by: lilonglong
- * @Last Modified time: 2022-08-18 16:36:41
+ * @Last Modified time: 2022-08-19 10:43:36
  */
 import express from 'express';
 import path from 'path';
@@ -11,7 +11,6 @@ import http from 'http';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import cors from 'cors';
-import { initCacheManager } from './cache-manager';
 import { AppDataSource } from '@app/data-source';
 import { authRouter } from '@modules/oauth';
 import { userRouter } from '@modules/user';
@@ -19,6 +18,7 @@ import logger from '@common/utils/logger';
 import morganMiddleware from '@common/middleware/morgan';
 import authMiddleware from '@common/middleware/auth';
 import responseJsonInterceptor from '@common/middleware/response-json-interceptor';
+import { initCacheManager } from './cache-manager';
 import { initSocket } from '../modules/socket';
 
 // create typeorm connection
@@ -33,7 +33,7 @@ AppDataSource.initialize()
     // TODO 优化点：使用配置文件，不要写死
     app.set('views', path.resolve(__dirname, '../../../static/dist'));
     app.set('view engine', 'ejs');
-    app.get('/app', function (req, res) {
+    app.get('/app', (req, res) => {
       res.render('index', {
         title: 'simple-chat',
       });
@@ -56,12 +56,12 @@ AppDataSource.initialize()
     app.use('/api/user', userRouter);
 
     // catch 404 and forward to error handler
-    app.use(function (req, res, next) {
+    app.use((_req, res, _next) => {
       res.status(404).send();
     });
 
     // catch error
-    app.use(function (err: any, req, res, next) {
+    app.use((err: any, _req, res, _next) => {
       console.error(err.stack);
       res.status(err.code || 500).json({
         message: err.message || err.stack,
